@@ -25,14 +25,14 @@ namespace Online_Shopping_Backup.Pages
 
             try
             {
-                SqlCommand cmd = new SqlCommand("insert into login_data values(@name,@password,@role,@address,@mobile_no,@email,@Answer)", conn);
+                SqlCommand cmd = new SqlCommand("insert into login_data values(@name,@password,@role,@address,@mobile_no,@email,@answer)", conn);
                 cmd.Parameters.AddWithValue("@name", txt_name.Text);
                 cmd.Parameters.AddWithValue("@password", txt_password.Text);
                 cmd.Parameters.AddWithValue("@role", "user");
                 cmd.Parameters.AddWithValue("@address", txt_address.Text);
                 cmd.Parameters.AddWithValue("@mobile_no", txt_mobile_no.Text);
                 cmd.Parameters.AddWithValue("@email", txt_Email_address.Text);
-                cmd.Parameters.AddWithValue("@Answer", txt_answer.Text);
+                cmd.Parameters.AddWithValue("@answer", txt_answer.Text);
                
                 conn.Open();
                 cmd.ExecuteNonQuery();
@@ -40,7 +40,7 @@ namespace Online_Shopping_Backup.Pages
 
             }
             catch {
-                lbl_error.Text = "Chose another username this username exist";
+                lbl_error.Text = "Choose another email this email already exist or login";
             
             }
          
